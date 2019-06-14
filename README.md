@@ -1,5 +1,5 @@
 # Logger
-日志jar包,latest version is 1.0.1 
+日志jar包,latest version is 1.0.4
 ## To get a Git project into your build
 ### gradle
 Step1. Add it in your root build.gradle at the end of repositories:

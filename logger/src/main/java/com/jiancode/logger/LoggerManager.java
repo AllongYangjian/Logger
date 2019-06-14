@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -141,7 +140,7 @@ public class LoggerManager {
             randomAccessFile.seek(fileLength);
 
             String content = String.format(Locale.getDefault(), "【%s】%s ：%s", info.getTime(), info.getTag(), info.getMsg()) + System.getProperty("line.separator");
-            randomAccessFile.write(content.getBytes(StandardCharsets.UTF_8));
+            randomAccessFile.write(content.getBytes("UTF-8"));
             randomAccessFile.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
