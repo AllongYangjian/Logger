@@ -38,9 +38,20 @@ public class LoggerManager {
     private boolean isRun = true;
 
     private SimpleDateFormat sdf1;
+
     private SimpleDateFormat sdf2;
 
     private Context mContext;
+
+    private boolean debug;
+
+    public boolean isDebug() {
+        return debug;
+    }
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
 
     private LoggerManager() {
         blockingQueue = new LinkedBlockingQueue<>();

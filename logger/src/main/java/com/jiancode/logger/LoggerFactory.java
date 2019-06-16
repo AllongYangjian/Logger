@@ -13,6 +13,4 @@ public class LoggerFactory {
         return new Logger(clazz);
     }
 
-
-
 }

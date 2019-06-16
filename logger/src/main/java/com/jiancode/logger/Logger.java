@@ -45,7 +45,6 @@ public class Logger {
         log(LogType.GUAGOU, bedno, msg);
     }
 
-
     public void serial(String msg) {
         log(LogType.SERIAL, "", msg);
     }
@@ -58,7 +57,7 @@ public class Logger {
         info.setBed(bed);
         info.setTime(LoggerManager.getInstance().getCurrentDateStr());
         LoggerManager.getInstance().put(info);
-        if (BuildConfig.DEBUG) {
+        if (LoggerManager.getInstance().isDebug()) {
             Log.e(tag, msg);
         }
     }
