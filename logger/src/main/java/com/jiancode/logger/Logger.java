@@ -49,7 +49,15 @@ public class Logger {
         log(LogType.SERIAL, "", msg);
     }
 
-    public void log(LogType type, String bed, String msg) {
+    public void other(String msg) {
+        log(LogType.OTHER, "", msg);
+    }
+
+    public void unknown(String msg) {
+        log(LogType.UNKNOWN, "", msg);
+    }
+
+    private void log(LogType type, String bed, String msg) {
         LogInfo info = new LogInfo();
         info.setLevel(type.getType());
         info.setMsg(msg);
@@ -57,10 +65,9 @@ public class Logger {
         info.setBed(bed);
         info.setTime(LoggerManager.getInstance().getCurrentDateStr());
         LoggerManager.getInstance().put(info);
+
         if (LoggerManager.getInstance().isDebug()) {
             Log.e(tag, msg);
         }
     }
-
-
 }

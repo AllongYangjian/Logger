@@ -49,8 +49,9 @@ public class LoggerManager {
         return debug;
     }
 
-    public void setDebug(boolean debug) {
+    public LoggerManager setDebug(boolean debug) {
         this.debug = debug;
+        return this;
     }
 
     private LoggerManager() {
@@ -64,7 +65,7 @@ public class LoggerManager {
     /**
      * 日志管理类的初始化方法，只能调用一次
      */
-    public void init(Context mContext) {
+    public LoggerManager init(Context mContext) {
         this.mContext = mContext;
         if (threadLocal.get() != null) {
             logger.warn("this method can only by called one time");
@@ -73,6 +74,7 @@ public class LoggerManager {
             executorService.execute(mRunnable);
             threadLocal.set(executorService);
         }
+        return this;
     }
 
 
