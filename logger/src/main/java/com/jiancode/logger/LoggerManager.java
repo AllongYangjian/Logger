@@ -205,7 +205,7 @@ public class LoggerManager {
      *
      * @return yyyyMMdd
      */
-    private String getCurrentYMDStr() {
+    public String getCurrentYMDStr() {
         return sdf2.format(new Date());
     }
 
