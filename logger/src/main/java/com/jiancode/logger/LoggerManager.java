@@ -77,7 +77,6 @@ public class LoggerManager {
         return this;
     }
 
-
     public static LoggerManager getInstance() {
         if (instance == null) {
             synchronized (LoggerManager.class) {
@@ -164,10 +163,32 @@ public class LoggerManager {
         }
     }
 
-    private String getLogPath() {
+    /**
+     * 获取今日日志文件路径
+     *
+     * @return 日志文件根路径 /mnt/sdcard/companyName/packageName/log/yyyymmdd
+     */
+    public String getLogPath() {
+        return getRootLogPath() + File.separator + getCurrentYMDStr();
+    }
+
+    /**
+     * 获取日志文件根路径
+     *
+     * @return 日志文件根路径 /mnt/sdcard/companyName/packageName/log/
+     */
+    public String getRootLogPath() {
         String rootPath = Environment.getExternalStorageDirectory().getPath() + File.separator + "Allong" + File.separator
                 + mContext.getPackageName();
-        return rootPath + File.separator + "log" + File.separator + getCurrentYMDStr();
+        return rootPath + File.separator + "log";
+    }
+
+    /**
+     * 获取日志文件所在文件夹
+     * @return {@link File}
+     */
+    public File getRootLogDirtory() {
+        return new File(getRootLogPath());
     }
 
     /**
