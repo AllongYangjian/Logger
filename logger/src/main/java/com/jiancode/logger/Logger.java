@@ -57,6 +57,10 @@ public class Logger {
         log(LogType.UNKNOWN, "", msg);
     }
 
+    public void alarm(String msg){
+        log(LogType.EMERGENCY, "emergency", msg);
+    }
+
     private void log(LogType type, String bed, String msg) {
         LogInfo info = new LogInfo();
         info.setLevel(type.getType());

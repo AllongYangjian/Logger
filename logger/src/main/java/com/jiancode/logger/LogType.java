@@ -16,8 +16,9 @@ public enum LogType {
     SERIAL(6, "serial.txt"),
     HJ(7, "hj.txt"),
     SY(8, "shuye.txt"),
-    OTHER(9, "other.txt"),
-    UNKNOWN(10,"unknown.txt");
+    EMERGENCY(9, "emergency.txt"),
+    OTHER(10, "other.txt"),
+    UNKNOWN(11, "unknown.txt");
 
     private int type;
 
@@ -40,25 +41,27 @@ public enum LogType {
     }
 
     public static String getNameByType(int type) {
-        if(type == INFO.type){
+        if (type == INFO.type) {
             return INFO.name;
-        }else if(type == DEBUG.type){
+        } else if (type == DEBUG.type) {
             return DEBUG.name;
-        }else if(type == WARN.type){
+        } else if (type == WARN.type) {
             return WARN.name;
-        }else if(type == ERROR.type){
+        } else if (type == ERROR.type) {
             return ERROR.name;
-        }else if(type == GUAGOU.type){
+        } else if (type == GUAGOU.type) {
             return GUAGOU.name;
-        }else if(type == SERIAL.type){
+        } else if (type == SERIAL.type) {
             return SERIAL.name;
-        }else if(type == HJ.type){
+        } else if (type == HJ.type) {
             return HJ.name;
-        }else if(type == SY.type){
+        } else if (type == SY.type) {
             return SY.name;
-        }else if (type == OTHER.type){
+        } else if (type == OTHER.type) {
             return OTHER.name;
-        }else {
+        } else if (type == EMERGENCY.type) {
+            return EMERGENCY.name;
+        } else {
             return UNKNOWN.name;
         }
     }
